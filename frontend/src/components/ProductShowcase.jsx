@@ -47,14 +47,7 @@ const ProductShowcase = ({ onCartUpdate }) => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden">
-      {/* Starry background effect */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="stars"></div>
-        <div className="stars2"></div>
-        <div className="stars3"></div>
-      </div>
-      
+    <div className="min-h-screen bg-black relative overflow-hidden">
       <div className="relative z-10 min-h-screen flex items-center justify-center px-8 pt-20">
         <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Product Description */}
@@ -72,9 +65,18 @@ const ProductShowcase = ({ onCartUpdate }) => {
             </p>
           </div>
           
-          {/* Product Image */}
+          {/* Product Image with Glow Effect */}
           <div className="relative flex items-center justify-center">
-            <div className={`transition-all duration-500 transform ${
+            {/* White Glow Background */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <img 
+                src="https://customer-assets.emergentagent.com/job_hoodiehub/artifacts/zlb2ph4z_16-169081_black-with-white-glow.png"
+                alt="glow effect"
+                className="w-96 h-96 object-contain opacity-80"
+              />
+            </div>
+            
+            <div className={`relative z-10 transition-all duration-500 transform ${
               isTransitioning ? 'opacity-0 scale-90 translate-x-12' : 'opacity-100 scale-100 translate-x-0'
             }`}>
               <img 
@@ -84,10 +86,12 @@ const ProductShowcase = ({ onCartUpdate }) => {
               />
             </div>
             
-            {/* Navigation Button */}
+            {/* Navigation Button - Position based on product */}
             <button
               onClick={() => handleProductSwitch('next')}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white hover:bg-gray-100 text-black rounded-full p-4 transition-all duration-300 hover:scale-110 shadow-lg"
+              className={`absolute top-1/2 transform -translate-y-1/2 bg-white hover:bg-gray-100 text-black rounded-full p-4 transition-all duration-300 hover:scale-110 shadow-lg ${
+                currentProductIndex === 0 ? 'right-4' : 'left-4'
+              }`}
               disabled={isTransitioning}
             >
               {currentProductIndex === 0 ? <ChevronRight size={24} /> : <ChevronLeft size={24} />}
