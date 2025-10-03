@@ -1,34 +1,121 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+.App {
+  text-align: left;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+/* Starry background animation */
+.stars {
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: 
+    1541px 1497px #FFF, 1449px 1555px #FFF, 1064px 1472px #FFF, 1586px 1015px #FFF, 
+    1642px 1279px #FFF, 1080px 1195px #FFF, 1295px 1605px #FFF, 1576px 1692px #FFF,
+    1170px 1612px #FFF, 1378px 1521px #FFF, 1096px 1705px #FFF, 1103px 1122px #FFF,
+    1308px 1697px #FFF, 1541px 1883px #FFF, 1611px 1270px #FFF, 1953px 1672px #FFF,
+    1824px 1503px #FFF, 1238px 1164px #FFF, 1840px 1147px #FFF, 1116px 1810px #FFF,
+    1765px 1405px #FFF, 1044px 1854px #FFF, 1905px 1854px #FFF, 1779px 1303px #FFF,
+    1684px 1120px #FFF, 1371px 1608px #FFF, 1568px 1150px #FFF, 1837px 1303px #FFF,
+    1499px 1879px #FFF, 1731px 1374px #FFF, 1738px 1815px #FFF, 1392px 1742px #FFF,
+    1849px 1456px #FFF, 1530px 1809px #FFF, 1721px 1035px #FFF, 1070px 1201px #FFF,
+    1766px 1832px #FFF, 1464px 1448px #FFF, 1603px 1743px #FFF, 1862px 1857px #FFF;
+  animation: animStar 50s linear infinite;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+.stars:after {
+  content: " ";
+  position: absolute;
+  top: 2000px;
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: 
+    1541px 1497px #FFF, 1449px 1555px #FFF, 1064px 1472px #FFF, 1586px 1015px #FFF, 
+    1642px 1279px #FFF, 1080px 1195px #FFF, 1295px 1605px #FFF, 1576px 1692px #FFF,
+    1170px 1612px #FFF, 1378px 1521px #FFF, 1096px 1705px #FFF, 1103px 1122px #FFF,
+    1308px 1697px #FFF, 1541px 1883px #FFF, 1611px 1270px #FFF, 1953px 1672px #FFF,
+    1824px 1503px #FFF, 1238px 1164px #FFF, 1840px 1147px #FFF, 1116px 1810px #FFF,
+    1765px 1405px #FFF, 1044px 1854px #FFF, 1905px 1854px #FFF, 1779px 1303px #FFF,
+    1684px 1120px #FFF, 1371px 1608px #FFF, 1568px 1150px #FFF, 1837px 1303px #FFF,
+    1499px 1879px #FFF, 1731px 1374px #FFF, 1738px 1815px #FFF, 1392px 1742px #FFF,
+    1849px 1456px #FFF, 1530px 1809px #FFF, 1721px 1035px #FFF, 1070px 1201px #FFF,
+    1766px 1832px #FFF, 1464px 1448px #FFF, 1603px 1743px #FFF, 1862px 1857px #FFF;
 }
 
-.App-link {
-    color: #61dafb;
+.stars2 {
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: 
+    1245px 1587px #FFF, 1003px 1294px #FFF, 1845px 1550px #FFF, 1445px 1698px #FFF,
+    1685px 1095px #FFF, 1768px 1633px #FFF, 1322px 1138px #FFF, 1945px 1203px #FFF,
+    1094px 1577px #FFF, 1756px 1288px #FFF, 1623px 1695px #FFF, 1359px 1264px #FFF,
+    1709px 1705px #FFF, 1425px 1854px #FFF, 1654px 1320px #FFF, 1859px 1674px #FFF,
+    1546px 1586px #FFF, 1338px 1164px #FFF, 1740px 1147px #FFF, 1216px 1810px #FFF;
+  animation: animStar 100s linear infinite;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.stars2:after {
+  content: " ";
+  position: absolute;
+  top: 2000px;
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: 
+    1245px 1587px #FFF, 1003px 1294px #FFF, 1845px 1550px #FFF, 1445px 1698px #FFF,
+    1685px 1095px #FFF, 1768px 1633px #FFF, 1322px 1138px #FFF, 1945px 1203px #FFF,
+    1094px 1577px #FFF, 1756px 1288px #FFF, 1623px 1695px #FFF, 1359px 1264px #FFF,
+    1709px 1705px #FFF, 1425px 1854px #FFF, 1654px 1320px #FFF, 1859px 1674px #FFF,
+    1546px 1586px #FFF, 1338px 1164px #FFF, 1740px 1147px #FFF, 1216px 1810px #FFF;
+}
+
+.stars3 {
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  box-shadow: 
+    1345px 1487px #FFF, 1203px 1394px #FFF, 1745px 1450px #FFF, 1345px 1798px #FFF,
+    1585px 1195px #FFF, 1668px 1533px #FFF, 1222px 1238px #FFF, 1845px 1303px #FFF,
+    1194px 1477px #FFF, 1656px 1388px #FFF, 1523px 1595px #FFF, 1259px 1364px #FFF;
+  animation: animStar 150s linear infinite;
+}
+
+.stars3:after {
+  content: " ";
+  position: absolute;
+  top: 2000px;
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  box-shadow: 
+    1345px 1487px #FFF, 1203px 1394px #FFF, 1745px 1450px #FFF, 1345px 1798px #FFF,
+    1585px 1195px #FFF, 1668px 1533px #FFF, 1222px 1238px #FFF, 1845px 1303px #FFF,
+    1194px 1477px #FFF, 1656px 1388px #FFF, 1523px 1595px #FFF, 1259px 1364px #FFF;
+}
+
+@keyframes animStar {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-2000px);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4a4a4a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6a6a6a;
 }
