@@ -51,7 +51,7 @@ const ProductShowcase = ({ onCartUpdate }) => {
       <div className="relative z-10 min-h-screen flex items-center justify-center px-8 pt-20">
         <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Product Description */}
-          <div className="text-white space-y-6">
+          <div className="text-white space-y-6 z-20 relative">
             <h1 className={`text-5xl md:text-6xl font-bold tracking-wider transition-all duration-500 ${
               isTransitioning ? 'opacity-0 transform translate-x-8' : 'opacity-100 transform translate-x-0'
             }`}>
@@ -68,7 +68,7 @@ const ProductShowcase = ({ onCartUpdate }) => {
           {/* Product Image with Glow Effect */}
           <div className="relative flex items-center justify-center">
             {/* White Glow Background */}
-            <div className="absolute inset-0 flex items-center justify-center">
+            <div className="absolute inset-0 flex items-center justify-center z-0">
               <img 
                 src="https://customer-assets.emergentagent.com/job_hoodiehub/artifacts/zlb2ph4z_16-169081_black-with-white-glow.png"
                 alt="glow effect"
@@ -76,7 +76,8 @@ const ProductShowcase = ({ onCartUpdate }) => {
               />
             </div>
             
-            <div className={`relative z-10 transition-all duration-500 transform ${
+            {/* Product Image - Lower z-index so buttons can be on top */}
+            <div className={`relative z-5 transition-all duration-500 transform ${
               isTransitioning ? 'opacity-0 scale-90 translate-x-12' : 'opacity-100 scale-100 translate-x-0'
             }`}>
               <img 
@@ -85,22 +86,22 @@ const ProductShowcase = ({ onCartUpdate }) => {
                 className="w-full max-w-md h-auto object-contain drop-shadow-2xl"
               />
             </div>
-            
-            {/* Navigation Button - Position based on product */}
-            <button
-              onClick={() => handleProductSwitch('next')}
-              className={`absolute top-1/2 transform -translate-y-1/2 bg-white hover:bg-gray-100 text-black rounded-full p-4 transition-all duration-300 hover:scale-110 shadow-lg ${
-                currentProductIndex === 0 ? 'right-4' : 'left-4'
-              }`}
-              disabled={isTransitioning}
-            >
-              {currentProductIndex === 0 ? <ChevronRight size={24} /> : <ChevronLeft size={24} />}
-            </button>
           </div>
         </div>
         
-        {/* Buy Button */}
-        <div className="absolute bottom-12 right-8">
+        {/* Navigation Button - Positioned outside product area for better accessibility */}
+        <button
+          onClick={() => handleProductSwitch('next')}
+          className={`absolute top-1/2 transform -translate-y-1/2 z-30 bg-white hover:bg-gray-100 text-black rounded-full p-4 transition-all duration-300 hover:scale-110 shadow-lg ${
+            currentProductIndex === 0 ? 'right-8 lg:right-16' : 'left-8 lg:left-16'
+          }`}
+          disabled={isTransitioning}
+        >
+          {currentProductIndex === 0 ? <ChevronRight size={24} /> : <ChevronLeft size={24} />}
+        </button>
+        
+        {/* Buy Button - Higher z-index to stay on top */}
+        <div className="absolute bottom-12 right-8 z-40">
           <div className="space-y-4">
             <Button
               onClick={handleBuyProduct}
@@ -111,8 +112,7 @@ const ProductShowcase = ({ onCartUpdate }) => {
             
             <Button
               onClick={handleViewCart}
-              variant="outline"
-              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-black font-bold py-3 px-6 rounded-full transition-all duration-300 hover:scale-105"
+              className="bg-white hover:bg-gray-100 text-black font-bold py-3 px-6 rounded-full text-lg transition-all duration-300 hover:scale-105 shadow-lg"
             >
               VIEW CART
             </Button>
