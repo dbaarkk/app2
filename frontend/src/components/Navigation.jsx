@@ -16,9 +16,9 @@ const Navigation = ({ cartItemCount }) => {
         {/* Mobile/Staggered Menu Button */}
         <button 
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="text-white hover:text-gray-300 transition-colors"
+          className="text-white hover:text-gray-300 transition-colors z-50"
         >
-          {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          <Menu size={28} />
         </button>
       </div>
 
