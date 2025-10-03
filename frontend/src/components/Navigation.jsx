@@ -24,7 +24,15 @@ const Navigation = ({ cartItemCount }) => {
 
       {/* Staggered Menu Overlay */}
       {isMenuOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center space-y-8 text-white font-medium">
+        <div className="fixed inset-0 bg-black z-50 flex flex-col items-center justify-center space-y-8 text-white font-medium">
+          {/* Close X Button */}
+          <button 
+            onClick={() => setIsMenuOpen(false)}
+            className="absolute top-8 right-8 text-white hover:text-gray-300 transition-colors z-60"
+          >
+            <X size={32} />
+          </button>
+          
           <div className="text-6xl font-bold mb-8 tracking-wider">OBSY</div>
           
           <Link 
