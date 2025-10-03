@@ -11,12 +11,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden">
-      <div className="absolute inset-0 opacity-30">
-        <div className="stars"></div>
-        <div className="stars2"></div>
-        <div className="stars3"></div>
-      </div>
+    <div className="min-h-screen bg-black relative overflow-hidden">
       
       <div className="relative z-10 min-h-screen flex items-center justify-center px-8 pt-24 pb-12">
         <div className="max-w-4xl mx-auto text-white">
